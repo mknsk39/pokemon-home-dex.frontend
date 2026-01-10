@@ -1,0 +1,16 @@
+services:
+  nuxt-app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+    - ../../pokemon-home-dex.frontend:/workspaces/pokemon-home-dex.frontend:cached
+    - frontend_node_modules:/workspaces/pokemon-home-dex.frontend/node_modules
+    - frontend_pnpm_store:/workspaces/pokemon-home-dex.frontend/.pnpm-store
+    - frontend_nuxt:/workspaces/pokemon-home-dex.frontend/.nuxt
+    command: sleep infinity
+
+volumes:
+  frontend_node_modules:
+  frontend_pnpm_store:
+  frontend_nuxt:

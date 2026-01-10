@@ -1,0 +1,34 @@
+{
+  "name": "pokemon-home-dex.frontend",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "nuxt-app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {"moby":false}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000],
+
+	// Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "TakumiI.markdowntable",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces"
+      ]
+    }
+  },
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "sudo chown -R node:node /workspaces/pokemon-home-dex.frontend && git config commit.template .github/COMMIT_MESSAGE_TEMPLATE.txt && pnpm install --frozen-lockfile"
+}
