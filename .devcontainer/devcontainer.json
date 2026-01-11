@@ -21,7 +21,8 @@
         "shd101wyy.markdown-preview-enhanced",
         "TakumiI.markdowntable",
         "oderwat.indent-rainbow",
-        "shardulm94.trailing-spaces"
+        "shardulm94.trailing-spaces",
+        "esbenp.prettier-vscode"
       ]
     }
   },
